@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import TaskList from "../components/TaskList";
+import TaskList from "../../components/TaskList/TaskList";
 import "./Tasks.css";
 
 export default function Tasks() {

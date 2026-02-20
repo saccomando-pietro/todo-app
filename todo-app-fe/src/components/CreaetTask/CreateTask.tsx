@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./CreateTask.css";
 
 type Props = {
   onClose: () => void;
@@ -7,7 +8,7 @@ type Props = {
 
 const TASKS_URL = "http://localhost:3000/api/tasks";
 
-function CreateTaskModal({ onClose, onTaskCreated }: Props) {
+function CreateTask({ onClose, onTaskCreated }: Props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [loading, setLoading] = useState(false);
@@ -92,4 +93,4 @@ function CreateTaskModal({ onClose, onTaskCreated }: Props) {
   );
 }
 
-export default CreateTaskModal;
+export default CreateTask;

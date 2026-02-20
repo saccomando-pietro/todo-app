@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import CreateTask from "./CreateTask";
+import "./TaskList.css";
+import CreateTask from "../CreaetTask/CreateTask";
 
 type Task = {
   _id?: number | string;

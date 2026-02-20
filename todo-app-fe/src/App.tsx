@@ -1,8 +1,8 @@
 import { Navigate, Route, Routes } from "react-router";
 import ProtectedRoute from "./auth/ProtectedRoute";
-import Login from "./pages/Login";
-import Registration from "./pages/Registration";
-import Tasks from "./pages/Tasks";
+import Login from "./pages/Login/Login";
+import Registration from "./pages/Registration/Registration";
+import Tasks from "./pages/Tasks/Tasks";
 
 function App() {
   return (
