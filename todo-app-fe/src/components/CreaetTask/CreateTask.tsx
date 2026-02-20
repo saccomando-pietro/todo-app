@@ -1,12 +1,11 @@
 import { useState } from "react";
+import { TASKS_URL } from "../../lib/api";
 import "./CreateTask.css";
 
 type Props = {
   onClose: () => void;
   onTaskCreated: (task: any) => void;
 };
-
-const TASKS_URL = "http://localhost:3000/api/tasks";
 
 function CreateTask({ onClose, onTaskCreated }: Props) {
   const [title, setTitle] = useState("");

@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
+import { REGISTRATION_URL } from "../../lib/api";
 import "./Registration.css";
-
-const REGISTRATION_URL = "http://localhost:3000/api/auth/register";
 
 export default function Registration() {
   const [username, setUsername] = useState("");

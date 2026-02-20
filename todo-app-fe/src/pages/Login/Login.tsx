@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
+import { LOGIN_URL } from "../../lib/api";
 import "./Login.css";
-
-const LOGIN_URL = "http://localhost:3000/api/auth/login";
 
 export default function Login() {
   const [email, setEmail] = useState("");

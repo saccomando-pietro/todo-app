@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import "./TaskList.css";
+import { TASKS_URL } from "../../lib/api";
 import CreateTask from "../CreaetTask/CreateTask";
+import "./TaskList.css";
 
 type Task = {
   _id?: number | string;
@@ -10,8 +11,6 @@ type Task = {
   description?: string;
   completed?: boolean;
 };
-
-const TASKS_URL = "http://localhost:3000/api/tasks";
 
 function TaskList() {
   const [tasks, setTasks] = useState<Task[]>([]);
