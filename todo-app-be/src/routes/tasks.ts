@@ -1,7 +1,7 @@
 import Router from "@koa/router";
 import TasksDAO from "../dao/tasks.dao";
-import { ITasks } from "../models/tasks";
 import { authMiddleware } from "../middlewares/authMiddleware";
+import { ITasks } from "../models/tasks";
 
 const router = new Router({ prefix: "/api/tasks" });
 const tasksDAO = new TasksDAO();
@@ -36,10 +36,10 @@ router.post("/", async (ctx) => {
     userId: ctx.state.user.id,
   };
 
-  await tasksDAO.create(newTask);
+  const createdTask = await tasksDAO.create(newTask);
 
   ctx.status = 201;
-  ctx.body = newTask;
+  ctx.body = createdTask;
 });
 
 router.get("/:id", async (ctx) => {
@@ -63,10 +63,7 @@ router.patch("/:id", async (ctx) => {
     return;
   }
 
-  const updatedTask = await tasksDAO.updateCompleted(
-    ctx.params.id,
-    completed
-  );
+  const updatedTask = await tasksDAO.updateCompleted(ctx.params.id, completed);
 
   if (!updatedTask) {
     ctx.status = 404;
