@@ -25,7 +25,8 @@ export default function Login() {
     }
 
     localStorage.setItem("token", data.token);
-    navigate("/tasks");
+    localStorage.setItem("role", data.user.role);
+    navigate(data.user.role === "admin" ? "/admin" : "/tasks");
   };
 
   return (

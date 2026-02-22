@@ -1,0 +1,114 @@
+/* =========================
+   PAGE LAYOUT
+========================= */
+
+.admin-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f9fafb;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2937;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.admin-header {
+  height: 70px;
+  background: #16a34a;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  border-bottom: 3px solid #15803d;
+}
+
+.admin-title {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.admin-logout {
+  padding: 8px 16px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.admin-logout:hover {
+  background: white;
+  color: #16a34a;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.admin-content {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.admin-section h2 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  border-left: 4px solid #16a34a;
+  padding-left: 10px;
+}
+
+/* =========================
+   TABLE STYLE
+========================= */
+
+.admin-table {
+  border: 1px solid #e5e7eb;
+  background: white;
+}
+
+.admin-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 120px;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.admin-row:last-child {
+  border-bottom: none;
+}
+
+.admin-row span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================
+   DELETE BUTTON
+========================= */
+
+.admin-delete {
+  padding: 6px 10px;
+  font-size: 13px;
+  border: 1px solid #dc2626;
+  background: white;
+  color: #dc2626;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.admin-delete:hover {
+  background: #dc2626;
+  color: white;
+}

@@ -1,8 +1,10 @@
 import { Navigate, Route, Routes } from "react-router";
+import AdminRoute from "./auth/AdminRoute";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import Login from "./pages/Login/Login";
 import Registration from "./pages/Registration/Registration";
 import Tasks from "./pages/Tasks/Tasks";
+import Admin from "./pages/Admin/Admin";
 
 function App() {
   return (
@@ -18,6 +20,14 @@ function App() {
           <ProtectedRoute>
             <Tasks />
           </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin"
+        element={
+          <AdminRoute>
+            <Admin />
+          </AdminRoute>
         }
       />
     </Routes>
