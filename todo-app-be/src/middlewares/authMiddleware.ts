@@ -1,6 +1,6 @@
+import dotenv from "dotenv";
 import jwt from "jsonwebtoken";
 import { Context, Next } from "koa";
-import dotenv from "dotenv";
 
 dotenv.config();
 
@@ -22,7 +22,10 @@ export const authMiddleware = async (ctx: Context, next: Next) => {
   const token = authHeader.split(" ")[1];
 
   try {
-    const decoded = jwt.verify(token, JWT_SECRET) as { userId: string };
+    const decoded = jwt.verify(token, JWT_SECRET) as {
+      id: string;
+      email: string;
+    };
     ctx.state.user = decoded;
     await next();
   } catch (err) {

@@ -3,6 +3,7 @@ import Router from '@koa/router';
 import dotenv from "dotenv";
 import taskRouter from "./routes/tasks";
 import usersRouter from "./routes/users";
+import adminRouter from "./routes/admin";
 import { bodyParser } from "@koa/bodyparser";
 import { dbClient } from "./lib/db";
 import cors from '@koa/cors';
@@ -24,6 +25,7 @@ app.use(
 app.use(router.routes()).use(router.allowedMethods());
 app.use(taskRouter.routes()).use(taskRouter.allowedMethods());
 app.use(usersRouter.routes()).use(usersRouter.allowedMethods());
+app.use(adminRouter.routes()).use(adminRouter.allowedMethods());
 
 
 app.listen(process.env.BACKEND_PORT, () => {

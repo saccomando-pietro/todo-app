@@ -29,6 +29,7 @@ router.post("/register", async (ctx) => {
     username,
     email,
     password: hashedPassword,
+    role: "user",
   });
 
   const token = jwt.sign(
@@ -41,7 +42,12 @@ router.post("/register", async (ctx) => {
   ctx.body = {
     message: "Utente registrato con successo",
     token,
-    user: { id: newUser._id, username: newUser.username, email: newUser.email },
+    user: {
+      id: newUser._id,
+      username: newUser.username,
+      email: newUser.email,
+      role: newUser.role,
+    },
   };
 });
 
@@ -81,7 +87,12 @@ router.post("/login", async (ctx) => {
   ctx.body = {
     message: "Login effettuato con successo",
     token,
-    user: { id: user._id, username: user.username, email: user.email },
+    user: {
+      id: user._id,
+      username: user.username,
+      email: user.email,
+      role: user.role,
+    },
   };
 });
 

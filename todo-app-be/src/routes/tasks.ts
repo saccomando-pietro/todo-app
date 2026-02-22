@@ -9,7 +9,7 @@ router.use(authMiddleware);
 
 router.get("/", async (ctx) => {
   const userId = ctx.state.user.id;
-  const tasks = await tasksDAO.getByUserId(userId);
+  const tasks = await tasksDAO.findByUserId(userId);
   if (!tasks) {
     ctx.status = 404;
     ctx.body = { error: "Tasks not found" };
@@ -43,7 +43,7 @@ router.post("/", async (ctx) => {
 });
 
 router.get("/:id", async (ctx) => {
-  const task = await tasksDAO.getById(ctx.params.id);
+  const task = await tasksDAO.findById(ctx.params.id);
   if (!task) {
     ctx.status = 404;
     ctx.body = { error: "Task not found" };

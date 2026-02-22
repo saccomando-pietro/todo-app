@@ -1,11 +1,11 @@
 import tasksModel, { ITasks } from "../models/tasks";
 
 class TasksDAO {
-  async getAll() {
+  async findAll() {
     return await tasksModel.find();
   }
 
-  async getByUserId(userId: string) {
+  async findByUserId(userId: string) {
     return await tasksModel.find({ userId });
   }
 
@@ -13,7 +13,7 @@ class TasksDAO {
     return await tasksModel.create(task);
   }
 
-  async getById(id: string) {
+  async findById(id: string) {
     return await tasksModel.findById(id);
   }
 
@@ -26,6 +26,10 @@ class TasksDAO {
       },
       { new: true },
     );
+  }
+
+  async deleteById(id: string) {
+    return await tasksModel.findByIdAndDelete(id);
   }
 }
 
