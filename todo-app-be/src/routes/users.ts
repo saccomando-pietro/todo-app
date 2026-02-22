@@ -52,18 +52,18 @@ router.post("/register", async (ctx) => {
 });
 
 router.post("/login", async (ctx) => {
-  const { email, password } = ctx.request.body as Pick<
+  const { username, password } = ctx.request.body as Pick<
     IUsers,
-    "email" | "password"
+    "username" | "password"
   >;
 
-  if (!email || !password) {
+  if (!username || !password) {
     ctx.status = 400;
-    ctx.body = { error: "Email e password sono obbligatorie" };
+    ctx.body = { error: "Username e password sono obbligatorie" };
     return;
   }
 
-  const user = await usersDAO.findByEmail(email);
+  const user = await usersDAO.findByUsername(username);
   if (!user) {
     ctx.status = 401;
     ctx.body = { error: "Credenziali non valide" };

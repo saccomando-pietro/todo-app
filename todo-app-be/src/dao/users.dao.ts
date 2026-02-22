@@ -9,6 +9,10 @@ export default class UsersDAO {
     return await usersModel.findOne({ email });
   }
 
+  async findByUsername(username: string) {
+    return await usersModel.findOne({ username });
+  }
+
   async findById(id: string) {
     return await usersModel.findById(id).select("-password");
   }

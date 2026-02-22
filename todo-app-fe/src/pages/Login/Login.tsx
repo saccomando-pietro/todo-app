@@ -4,7 +4,7 @@ import { LOGIN_URL } from "../../lib/api";
 import "./Login.css";
 
 export default function Login() {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
@@ -14,7 +14,7 @@ export default function Login() {
     const res = await fetch(LOGIN_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ username, password }),
     });
 
     const data = await res.json();
@@ -36,10 +36,10 @@ export default function Login() {
 
         <input
           className="login-input"
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         />
 
         <input
